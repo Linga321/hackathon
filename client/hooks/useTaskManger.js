@@ -1,12 +1,12 @@
-import { useContext, useState, useEffect } from 'react';
-import { client, routes } from '../utils/api';
+import { useContext, useState, useEffect } from "react";
+import { client, routes } from "../utils/api";
 
 /**
  * link.
- * @see https:// 
+ * @see https://
  *
  * @returns list
- 
+ */
 export default function useTaskManager() {
   const [user, setUser] = useState(true); // just dummy acess
   const [tasks, setTasks] = useState(null);
@@ -16,7 +16,7 @@ export default function useTaskManager() {
 
     try {
       const tasks = await Promise.all([
-        client.get(routes.task.allTask('8477e32e-4871'))
+        client.get(routes.task.allTask("8477e32e-4871")),
       ]);
       setTasks(tasks);
     } catch (error) {
@@ -26,4 +26,3 @@ export default function useTaskManager() {
 
   return tasks;
 }
-*/
