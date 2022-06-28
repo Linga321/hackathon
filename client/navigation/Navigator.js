@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const RootNavigator = () => {
-  const [onGoing, success] = useState(false);
+  const [onGoing, success] = useState(true);
   return onGoing ? (
     <Tab.Navigator
       initialRouteName="Home"
@@ -51,6 +51,13 @@ const RootNavigator = () => {
         name="Map View"
         component={MapScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+            fontSize: "30rem",
+          },
           tabBarLabel: "Updates",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
@@ -61,6 +68,13 @@ const RootNavigator = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+            fontSize: "30rem",
+          },
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
