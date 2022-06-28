@@ -13,7 +13,7 @@ const MapScreen = () => {
       <Text style={styles.date}>Today</Text>
       <Text style={styles.distance}>Travel distance: 6,7km</Text>
       <Text style={styles.transportation}>
-        Transpotation: Walking, tram and bus
+        Transportation: Walking, tram and bus
       </Text>
       <Text style={styles.time}>Travel time: 1h 6m</Text>
     </View>
