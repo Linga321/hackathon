@@ -35,7 +35,12 @@ const RootNavigator = () => {
         component={HomeScreen}
         options={{
           title: "Activ Tracker",
-          headerTintColor: "#16949C",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+            fontSize: "30rem",
+          },
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />

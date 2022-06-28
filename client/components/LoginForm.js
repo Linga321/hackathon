@@ -32,12 +32,15 @@ const LoginForm = () => {
    */
   const onSubmit = async (data) => {
     try {
-      const res = await client.post('http://localhost:5000/api/v1/users/login', {
-        username: data.username,
-        password: data.password
-      })
+      const res = await client.post(
+        "http://localhost:5001/api/v1/users/login",
+        {
+          username: data.username,
+          password: data.password,
+        }
+      );
 
-      console.log(res.data)
+      console.log(res.data);
     } catch (error) {
       console.error(error);
     }
@@ -155,11 +158,11 @@ const styles = StyleSheet.create({
   },
   registerText: {
     color: "#bd157a",
-    fontSize: 15,
+    fontSize: 16,
   },
   registerButton: {
     color: "#eb2a9e",
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: "500",
   },
 });
