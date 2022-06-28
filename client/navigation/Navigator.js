@@ -23,7 +23,7 @@ const RootNavigator = () => {
         // tabBarActiveBackgroundColor: "#eb2a9e",
         tabBarActiveTintColor: "#e91e63",
         barStyle: {
-          backgroundColor: "grey",
+          backgroundColor: "#F9F9F9",
         },
         headerStyle: {
           backgroundColor: COLORS.primary,
@@ -35,11 +35,10 @@ const RootNavigator = () => {
         component={HomeScreen}
         options={{
           title: "Activ Tracker",
-          headerTintColor: "#FFFFFF",
+          headerTintColor: "#32A2A4",
           headerStyle: {
             backgroundColor: COLORS.primary,
-            fontWeight: "bold",
-            fontSize: "30rem",
+            // fontWeight: "bold",
           },
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
@@ -56,7 +55,6 @@ const RootNavigator = () => {
           headerStyle: {
             backgroundColor: COLORS.primary,
             fontWeight: "bold",
-            fontSize: "30rem",
           },
           tabBarLabel: "Updates",
           tabBarIcon: ({ color, size }) => (
@@ -72,8 +70,8 @@ const RootNavigator = () => {
           headerTintColor: "#FFFFFF",
           headerStyle: {
             backgroundColor: COLORS.primary,
-            fontWeight: "bold",
-            fontSize: "30rem",
+            // fontWeight: "bold",
+            // fontSize: 30,
           },
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
