@@ -6,8 +6,14 @@ const MapScreen = () => {
     <View style={styles.container}>
       <View>
         <Image
-          style={styles.stockimage}
+          style={styles.stockImage}
           source={require("../assets/map-image.jpg")}
+        />
+      </View>
+      <View>
+        <Image
+          style={styles.homeIcon}
+          source={require("../assets/home-icon.png")}
         />
       </View>
       <Text style={styles.date}>Today</Text>
@@ -24,7 +30,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: COLORS.primary,
   },
-  stockimage: {
+  stockImage: {
     width: 400,
     height: 400,
     borderWidth: 4,
@@ -34,6 +40,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     marginTop: 200,
     paddingTop: "60",
+  },
+  homeIcon: {
+    width: 50,
+    height: 50,
+    borderWidth: 4,
+    borderColor: "white",
+    marginBottom: 10,
+    position: "absolute",
+    marginTop: 236,
   },
   date: {
     marginHorizontal: "0.1em",
