@@ -37,6 +37,7 @@ const MapScreen = () => {
       setLocation({
         latitude: locationCurrent.coords.latitude,
         longitude: locationCurrent.coords.longitude,
+        speed: locationCurrent.coords.speed,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       });
@@ -56,6 +57,12 @@ const MapScreen = () => {
         <Marker
           coordinate={location}
           image={imagePath.curLoc}
+        />
+        <Circle
+        center={
+          home
+        }
+        radius={10}
         />
         <Marker
           coordinate={droplocationCords}
