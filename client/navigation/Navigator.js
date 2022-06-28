@@ -37,7 +37,7 @@ const RootNavigator = () => {
         name="Map View"
         component={MapScreen}
         options={{
-          tabBarLabel: "Updates",
+          tabBarLabel: "Map View",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
