@@ -10,12 +10,12 @@ import ProfileScreen from "../view/ProfileScreen";
 import style from "../context/style";
 import RegisterScreen from "../view/RegisterScreen";
 import MapScreen from "../view/MapScreen";
-
+import { COLORS } from "../styles/theme";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const RootNavigator = () => {
-  const [onGoing, success] = useState(false);
+  const [onGoing, success] = useState(true);
   return onGoing ? (
     <Tab.Navigator
       initialRouteName="Home"
@@ -23,12 +23,10 @@ const RootNavigator = () => {
         // tabBarActiveBackgroundColor: "#eb2a9e",
         tabBarActiveTintColor: "#e91e63",
         barStyle: {
-          backgroundColor: "grey",
+          backgroundColor: "#F9F9F9",
         },
         headerStyle: {
-          backgroundColor: "grey",
-          // position: "center",
-          // marginLeft: "40px",
+          backgroundColor: COLORS.primary,
         },
       }}
     >
@@ -36,6 +34,12 @@ const RootNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#32A2A4",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            // fontWeight: "bold",
+          },
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -46,6 +50,12 @@ const RootNavigator = () => {
         name="Map View"
         component={MapScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+          },
           tabBarLabel: "Updates",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
@@ -56,6 +66,13 @@ const RootNavigator = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            // fontWeight: "bold",
+            // fontSize: 30,
+          },
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />

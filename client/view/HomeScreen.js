@@ -1,5 +1,7 @@
 import { useContext } from "react";
 
+import { COLORS } from "../styles/theme";
+
 // import LoginForm from "../components/LoginForm";
 import {
   View,
@@ -20,12 +22,12 @@ const HomeScreen = () => {
           <LoginForm />
         </View> */}
         <View style={styles.bodyContent}>
-          <Text style={styles.name}>John Doe</Text>
-          <Text style={styles.info}>UX Designer / Mobile developer</Text>
-          <Text style={styles.description}>
-            Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum
-            electram expetendis, omittam deseruisse consequuntur ius an,
+          <Text style={styles.date}>Today</Text>
+          <Text style={styles.distance}>Travel distance: 6,7km</Text>
+          <Text style={styles.transportation}>
+            Transportation: Walking, tram and bus
           </Text>
+          <Text style={styles.time}>Travel time: 1h 6m</Text>
         </View>
       </View>
     </ScrollView>
@@ -37,10 +39,48 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bodyContent: {
-    // position: flex,
-    // // flexDirection: "column",
-    // topMargin: 2em,
-    backgroundColor: "#eb2a9e",
+    paddingTop: "4em",
+    backgroundColor: COLORS.primary,
+    height: "100vh",
+  },
+  date: {
+    height: "3em",
+    backgroundColor: COLORS.lightGrey,
+    marginHorizontal: "1em",
+    fontSize: 18,
+    color: COLORS.darkGrey,
+    textAlign: "center",
+    paddingVertical: "1em",
+  },
+  distance: {
+    marginTop: "2em",
+    marginHorizontal: "1em",
+    height: "3em",
+    backgroundColor: COLORS.lightGrey,
+    fontSize: 17,
+    color: COLORS.darkGrey,
+    textAlign: "center",
+    paddingVertical: "1em",
+  },
+  transportation: {
+    marginTop: "2em",
+    marginHorizontal: "1em",
+    height: "4em",
+    backgroundColor: COLORS.lightGrey,
+    fontSize: 17,
+    color: COLORS.darkGrey,
+    textAlign: "center",
+    paddingVertical: "1em",
+  },
+  time: {
+    marginTop: "2em",
+    marginHorizontal: "1em",
+    height: "4em",
+    backgroundColor: COLORS.lightGrey,
+    fontSize: 17,
+    color: COLORS.darkGrey,
+    textAlign: "center",
+    paddingVertical: "1em",
   },
 });
 
