@@ -10,7 +10,7 @@ import ProfileScreen from "../view/ProfileScreen";
 import style from "../context/style";
 import RegisterScreen from "../view/RegisterScreen";
 import MapScreen from "../view/MapScreen";
-
+import { COLORS } from "../styles/theme";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -26,9 +26,7 @@ const RootNavigator = () => {
           backgroundColor: "grey",
         },
         headerStyle: {
-          backgroundColor: "grey",
-          // position: "center",
-          // marginLeft: "40px",
+          backgroundColor: COLORS.primary,
         },
       }}
     >
@@ -36,6 +34,8 @@ const RootNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#16949C",
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />

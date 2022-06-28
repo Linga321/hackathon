@@ -1,5 +1,7 @@
 import { useContext } from "react";
 
+import { COLORS } from "../styles/theme";
+
 // import LoginForm from "../components/LoginForm";
 import {
   View,
@@ -40,7 +42,8 @@ const styles = StyleSheet.create({
     // position: flex,
     // // flexDirection: "column",
     // topMargin: 2em,
-    backgroundColor: "#eb2a9e",
+    backgroundColor: COLORS.primary,
+    height: "100vh",
   },
 });
 
