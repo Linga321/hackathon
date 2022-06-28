@@ -10,7 +10,7 @@ import ProfileScreen from "../view/ProfileScreen";
 import style from "../context/style";
 import RegisterScreen from "../view/RegisterScreen";
 import MapScreen from "../view/MapScreen";
-
+import { COLORS } from "../styles/theme";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -20,13 +20,27 @@ const RootNavigator = () => {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
+        // tabBarActiveBackgroundColor: "#eb2a9e",
         tabBarActiveTintColor: "#e91e63",
+        barStyle: {
+          backgroundColor: "grey",
+        },
+        headerStyle: {
+          backgroundColor: COLORS.primary,
+        },
       }}
     >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+            fontSize: "30rem",
+          },
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -37,7 +51,14 @@ const RootNavigator = () => {
         name="Map View"
         component={MapScreen}
         options={{
-          tabBarLabel: "Map View",
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+            fontSize: "30rem",
+          },
+          tabBarLabel: "Updates",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
@@ -47,6 +68,13 @@ const RootNavigator = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
+          title: "Activ Tracker",
+          headerTintColor: "#FFFFFF",
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            fontWeight: "bold",
+            fontSize: "30rem",
+          },
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
