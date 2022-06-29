@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Input, Text, Button } from "react-native-elements";
+import { client } from "../utils/api";
 
 import { client, routes } from "../utils/api";
 
@@ -33,11 +34,15 @@ const LoginForm = () => {
    */
   const onSubmit = async (data) => {
     try {
-      const tasks = await client.post("localhost:5000/api/v1/users/login", {
-        username: data.username,
-        password: data.password,
-      });
-      console.log(tasks);
+      const res = await client.post(
+        "http://localhost:5001/api/v1/users/login",
+        {
+          username: data.username,
+          password: data.password,
+        }
+      );
+
+      console.log(res.data);
     } catch (error) {
       console.error(error);
     }
@@ -155,11 +160,11 @@ const styles = StyleSheet.create({
   },
   registerText: {
     color: "#bd157a",
-    fontSize: 15,
+    fontSize: 16,
   },
   registerButton: {
-    color: "#bd157a",
-    fontSize: 15,
+    color: "#eb2a9e",
+    fontSize: 16,
     fontWeight: "500",
   },
 });
