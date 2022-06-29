@@ -17,9 +17,9 @@
     -> /view contains different screen (view) of the app
     -> /context/style contains reused colors
 ### App OutLook
-<img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS%20(1).png" width="280" height="553" padding="20">
+<img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS%20(1).png" width="280" height="553">
 <img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS.png" width="280" height="553" padding="20">
-<img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS%20(2).png" width="400" height="790" padding="20">
-<img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS%20(3).png" width="400" height="790" padding="20">
+<img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS%20(2).png" width="280" height="553" padding="20">
+<img src="https://github.com/Linga321/hackathon/blob/main/client/assets/Image%20from%20iOS%20(3).png" width="280" height="553" padding="20">
 
 
