@@ -1,7 +1,7 @@
 import React from 'react';
-import { createAppContainer, createSwitchNavigator } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import AccountScreen from './src/screens/AccountScreen';
 import SigninScreen from './src/screens/SigninScreen';
@@ -15,52 +15,44 @@ import ResolveAuthScreen from './src/screens/ResolveAuthScreen';
 import { Provider as LocationProvider } from './src/context/LocationContext';
 import { Provider as TrackProvider } from './src/context/TrackContext';
 import { FontAwesome } from '@expo/vector-icons';
-import { Text } from 'react-native-elements';
-import { View } from 'react-native';
 
-const Tab = createBottomTabNavigator() ; 
+const trackListFlow = createStackNavigator({
+  TrackList: TrackListScreen,
+  TrackDetail: TrackDetailScreen,
+});
 
-// const trackListFlow = createNativeStackNavigator({
-//   TrackList: TrackListScreen,
-//   TrackDetail: TrackDetailScreen,
-// });
+trackListFlow.navigationOptions = {
+  title: 'Tracks',
+  tabBarIcon: <FontAwesome name="th-list" size={20} />,
+};
 
-// trackListFlow.navigationOptions = {
-//   title: 'Tracks',
-//   tabBarIcon: <FontAwesome name="th-list" size={20} />,
-// };
+const switchNavigator = createSwitchNavigator({
+  ResolveAuth: ResolveAuthScreen,
+  loginFlow: createStackNavigator({
+    Signup: SignupScreen,
+    Signin: SigninScreen,
+  }),
+  mainFlow: createBottomTabNavigator({
+    trackListFlow,
+    TrackCreate: TrackCreateScreen,
+    Account: AccountScreen,
+  }),
+});
 
-// const switchNavigator = createSwitchNavigator({
-//   ResolveAuth: ResolveAuthScreen,
-//   loginFlow: createNativeStackNavigator({
-//     Signup: SignupScreen,
-//     Signin: SigninScreen,
-//   }),
-//   mainFlow: createBottomTabNavigator({
-//     trackListFlow,
-//     TrackCreate: TrackCreateScreen,
-//     Account: AccountScreen,
-//   }),
-// });
+const App = createAppContainer(switchNavigator);
 
-//const App = createAppContainer(switchNavigator);
-//const App = createAppContainer();
 export default () => {
   return (
-    // <TrackProvider>
-    //   <LocationProvider>
-    //     <AuthProvider>
-    //       <App
-    //         ref={(navigator) => {
-    //           setNavigator(navigator);
-    //         }}
-    //       />
-    //     </AuthProvider>
-    //   </LocationProvider>
-    // </TrackProvider>
-    <View>
-      <Text h3>hi</Text>
-  
-    </View>
+    <TrackProvider>
+      <LocationProvider>
+        <AuthProvider>
+          <App
+            ref={(navigator) => {
+              setNavigator(navigator);
+            }}
+          />
+        </AuthProvider>
+      </LocationProvider>
+    </TrackProvider>
   );
 };
