@@ -12,8 +12,8 @@ const MapScreen = () => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [history, setHistory] = useState([])
   const [home, setHome] = useState({
-    latitude: 63.6744,
-    longitude: 22.6966,
+    latitude: 0,
+    longitude: 0,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
@@ -41,12 +41,13 @@ const MapScreen = () => {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       });
+      setHome(location)
     })();
   }, []);
 
 
   console.log("location  ", location)
-  console.log("history   ",history)
+  console.log("history   ", home)
   return (
     <View style={styles.container}>
       {Object.keys(location).length > 0 ? <MapView
@@ -57,12 +58,14 @@ const MapScreen = () => {
         <Marker
           coordinate={location}
           image={imagePath.curLoc}
-        />
-        <Circle
-        center={
-          home
-        }
-        radius={10}
+          pinColor="#FF0000"
+          draggable={true}
+          onDragEnd={(e) => {
+            setHome({
+              latitude: e.nativeEvent.coordinate.latitude,
+              longitude: e.nativeEvent.coordinate.longitude
+            })
+          }}
         />
         <Marker
           coordinate={droplocationCords}
@@ -70,7 +73,7 @@ const MapScreen = () => {
         />
 
         <MapViewDirections
-          origin={location}
+          origin={home.latitude ? home : null}
           destination={droplocationCords}
           apikey="AIzaSyA9APAjVFIop_O5T1grvgvRxNSDzwURXPc"
           strokeWidth={3}
