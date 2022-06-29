@@ -1,4 +1,4 @@
-﻿# task-management
+﻿# Client Site of the Actriv Tracker
  ### terminal command to run or execute the program
      -> npm install
        -> npm install -g expo-cli
