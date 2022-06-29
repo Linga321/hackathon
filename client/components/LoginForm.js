@@ -1,12 +1,9 @@
-import React from "react";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
-import { useForm, Controller } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Input, Text, Button } from "react-native-elements";
+import { Button, Input, Text } from "react-native-elements";
+
 import { client } from "../utils/api";
-
-import { client, routes } from "../utils/api";
 
 /**
  * it contains login form and action that takes
